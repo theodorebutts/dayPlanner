@@ -36,13 +36,6 @@ $(".saveBtn").on("click", function (event) {
         list[activeHour] = newUserInput
     
     localStorage.setItem("newUserInput", JSON.stringify(list));
-<<<<<<< HEAD
-=======
-});
-
-$(".list-group").on("blur", ".inputarea", function(){
-    localStorage.setItem("newUserInput", JSON.stringify(list));
->>>>>>> feature/timeColor
 });
 
 // Recall from storage
