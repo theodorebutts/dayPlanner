@@ -1,5 +1,6 @@
 # Day Planner
-
+repo url: https://github.com/theodorebutts/dayPlanner
+deployment: https://theodorebutts.github.io/dayPlanner/
 ## User Story
 AS AN employee with a busy schedule
 I WANT to add important events to a daily planner
