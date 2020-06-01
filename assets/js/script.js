@@ -35,7 +35,7 @@ $('.saveBtn').on('click', function (event) {
 });
 
 // Recall from storage
-function activateLocal(list) {
+function loadTasks(list) {
     for (key in list) {
         var toDoItem = $('.hour-' + key + "-color");
         toDoItem.children().text(list[key]);
@@ -46,15 +46,17 @@ function activateLocal(list) {
 // Time Color Change
 function checkDates() {
     for (var i = 9; i < 18; i++) {
-      var currentTime = $(".hour-" + i).data("hour");
-      var momentInt = parseInt(m.format("HH"))
-      $(".hour-" + i + "-color").removeClass("past present future")
-      if (currentTime < momentInt) {
-        $(".hour-" + i + "-color").addClass("past")
-      } else if (currentTime > momentInt) {
-        $(".hour-" + i + "-color").addClass("future")
-      } else if (currentTime === momentInt) {
-        $(".hour-" + i + "-color").addClass("present")
-      }
+        var currentTime = $(".hour-" + i).data("hour");
+        var momentInt = parseInt(m.format("HH"))
+        $(".hour-" + i + "-color").removeClass("past present future")
+        if (currentTime < momentInt) {
+            $(".hour-" + i + "-color").addClass("past")
+        } else if (currentTime > momentInt) {
+            $(".hour-" + i + "-color").addClass("future")
+        } else if (currentTime === momentInt) {
+            $(".hour-" + i + "-color").addClass("present")
+        }
     }
-  }
+}
+
+loadTasks(list);
