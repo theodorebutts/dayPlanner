@@ -19,7 +19,6 @@ $(".list-group").on('click', "ul", function () {
 
 
 // Save button
-
 $('.saveBtn').on('click', function (event) {
     event.preventDefault();
     var newUserInput = $(this)
@@ -44,3 +43,18 @@ function activateLocal(list) {
     }
 }
 
+// Time Color Change
+function checkDates() {
+    for (var i = 9; i < 18; i++) {
+      var currentTime = $(".hour-" + i).data("hour");
+      var momentInt = parseInt(m.format("HH"))
+      $(".hour-" + i + "-color").removeClass("past present future")
+      if (currentTime < momentInt) {
+        $(".hour-" + i + "-color").addClass("past")
+      } else if (currentTime > momentInt) {
+        $(".hour-" + i + "-color").addClass("future")
+      } else if (currentTime === momentInt) {
+        $(".hour-" + i + "-color").addClass("present")
+      }
+    }
+  }
